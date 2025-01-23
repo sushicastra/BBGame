@@ -34,13 +34,14 @@ script = ExtResource("3_byxxy")
 [node name="RunModule" type="Node" parent="."]
 script = ExtResource("4_gdhfx")
 SPEED = 800.0
-ACCELERATION = 10.0
-DECELERATION = 20.0
+ACCELERATION = 15.0
+DECELERATION = 30.0
+AIR_ACCELERATION = 10.0
+AIR_DECELERATION = 5.0
 
 [node name="JumpModule" type="Node" parent="."]
 script = ExtResource("5_262f3")
-JUMP_FORCE = 1600.0
-JUMP_CUT_FACTOR = 0.4
+JUMP_FORCE = 1500.0
 
 [node name="GravityModule" type="Node" parent="."]
 script = ExtResource("5_t6ono")
