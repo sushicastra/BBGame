@@ -39,9 +39,12 @@ DECELERATION = 20.0
 
 [node name="JumpModule" type="Node" parent="."]
 script = ExtResource("5_262f3")
+JUMP_FORCE = 1600.0
+JUMP_CUT_FACTOR = 0.4
 
 [node name="GravityModule" type="Node" parent="."]
 script = ExtResource("5_t6ono")
+GRAVITY = 5000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_q6icd")
