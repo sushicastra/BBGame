@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://uvjc6oyn6dr0"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_057o0"]
+[ext_resource type="Texture2D" uid="uid://c4f4cvatillwb" path="res://sprites/cloud.jpg" id="2_axhob"]
+[ext_resource type="Script" path="res://scripts/player_modules/input_module.gd" id="3_byxxy"]
+[ext_resource type="Script" path="res://scripts/player_modules/run_module.gd" id="4_gdhfx"]
+[ext_resource type="Script" path="res://scripts/player_modules/jump_module.gd" id="5_262f3"]
+[ext_resource type="Script" path="res://scripts/player_modules/gravity_module.gd" id="5_t6ono"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6icd"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("input", "run", "jump", "gravity")]
+script = ExtResource("1_057o0")
+input = NodePath("InputModule")
+run = NodePath("RunModule")
+jump = NodePath("JumpModule")
+gravity = NodePath("GravityModule")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_axhob")
+
+[node name="InputModule" type="Node" parent="."]
+script = ExtResource("3_byxxy")
+
+[node name="RunModule" type="Node" parent="."]
+script = ExtResource("4_gdhfx")
+SPEED = 800.0
+ACCELERATION = 10.0
+DECELERATION = 20.0
+
+[node name="JumpModule" type="Node" parent="."]
+script = ExtResource("5_262f3")
+
+[node name="GravityModule" type="Node" parent="."]
+script = ExtResource("5_t6ono")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_q6icd")
