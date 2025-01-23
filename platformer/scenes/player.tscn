@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://uvjc6oyn6dr0"]
+[gd_scene load_steps=7 format=3 uid="uid://uvjc6oyn6dr0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_057o0"]
-[ext_resource type="Texture2D" uid="uid://c4f4cvatillwb" path="res://sprites/cloud.jpg" id="2_axhob"]
 [ext_resource type="Script" path="res://scripts/player_modules/input_module.gd" id="3_byxxy"]
 [ext_resource type="Script" path="res://scripts/player_modules/run_module.gd" id="4_gdhfx"]
 [ext_resource type="Script" path="res://scripts/player_modules/jump_module.gd" id="5_262f3"]
@@ -16,9 +15,9 @@ run = NodePath("RunModule")
 jump = NodePath("JumpModule")
 gravity = NodePath("GravityModule")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_axhob")
+[node name="AnimationModule" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationModule"]
 
 [node name="InputModule" type="Node" parent="."]
 script = ExtResource("3_byxxy")
